@@ -74,3 +74,17 @@ FROM animals GROUP BY species;
 SELECT species, AVG(escape_attempts) FROM animals 
 WHERE date_of_birth BETWEEN '1990-01-01' AND '1999-12-31' 
 GROUP BY species;
+
+SELECT name, owners.full_name AS owner FROM animals INNER JOIN owners ON owner_id = owners.id WHERE full_name = 'Melody Pond';
+
+SELECT animal.name, type.name FROM animals AS animal INNER JOIN species AS type ON species_id = type.id WHERE type.name = 'Pokemon';
+
+SELECT animal.name, owner.full_name AS owner FROM animals AS animal RIGHT JOIN owners As owner ON owner_id = owner.id;
+
+SELECT type.name, COUNT(*) FROM animals JOIN species AS type ON species_id = type.id GROUP BY type.name;
+
+SELECT owner.full_name AS owner, animal.name AS  Digimons FROM animals AS animal INNER JOIN owners AS owner ON owner_id = owner.id WHERE full_name = 'Jennifer Orwell' AND species_id=2;
+
+SELECT owner.full_name AS owner, animal.name AS  Escape_Tries FROM animals AS animal INNER JOIN owners AS owner ON owner_id = owner.id WHERE full_name = 'Dean Winchester' AND escape_attempts=0;
+
+SELECT owner.full_name AS owner, COUNT(*) as animals_owned FROM animals AS animal INNER JOIN owners As owner ON owner_id = owner.id GROUP BY owner.full_name ORDER BY animals_owned DESC;
