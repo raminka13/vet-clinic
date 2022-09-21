@@ -4,6 +4,8 @@
 # VET CLINIC DATABASE
 
 This is a database project for a fictional Vet Clinic for Digimons and Pokemons.
+![](./drawSQL-export-2022-09-21_11%2000.png)
+
 ## Getting Started
 
 This repository includes files with plain SQL that can be used to recreate a database:
